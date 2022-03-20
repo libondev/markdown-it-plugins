@@ -2,7 +2,7 @@ import {
   collectBlockCode
 } from '../dist/index'
 
-import '../src/styles/collect-block-code.scss'
+import '../styles/collect-block-code.scss'
 
 import MarkdownIt from "markdown-it";
 
