@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "packageManager": "pnpm@6.32.3",
   "description": "",
-  "keywords": ["markdown-it", "plugins"],
+  "keywords": [
+    "markdown-it",
+    "plugins"
+  ],
   "homepage": "https://github.com/banlify/markdown-it-plugins#readme",
   "bugs": {
     "url": "https://github.com/banlify/markdown-it-plugins/issues"
@@ -48,6 +51,7 @@
     "markdown-it": "^12.3.2",
     "pnpm": "^6.32.3",
     "rimraf": "^3.0.2",
+    "sass": "^1.49.9",
     "typescript": "^4.6.2",
     "unbuild": "^0.7.0",
     "vite": "^2.8.6"

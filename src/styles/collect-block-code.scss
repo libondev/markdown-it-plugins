@@ -1,0 +1,51 @@
+.collect-block {
+  &-code {
+    border-radius: .5rem;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+  }
+
+  &-trigger {
+    display: flex;
+    padding: 0 15px;
+    height: 38px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    .trigger-lt,
+    .trigger-rt {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .block-code-icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
+
+    .block-code-name {
+      margin-left: 5px;
+    }
+
+    .block-code-lang {
+      margin-left: 5px;
+      user-select: none;
+      color: #999;
+    }
+
+    .copy-code-btn {
+      border: 0;
+      height: 24px;
+      margin-left: 5px;
+      background: none;
+      cursor: pointer;
+      color: inherit;
+    }
+  }
+
+  &-content {
+    margin: 0 1em 1em;
+  }
+}
