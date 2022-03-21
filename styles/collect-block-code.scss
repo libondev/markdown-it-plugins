@@ -1,51 +1,63 @@
-.collect-block {
-  &-code {
-    border-radius: .5rem;
-    border: 1px solid #eaeaea;
-    overflow: hidden;
-  }
+.collect-block-code {
+  margin: 1em 0;
+  border-radius: 0.5rem;
+  border: 1px solid #eaeaea;
+  overflow: hidden;
+}
 
-  &-trigger {
-    display: flex;
-    padding: 0 15px;
-    height: 38px;
+.collect-block-trigger {
+  display: flex;
+  padding: 0 15px;
+  height: 38px;
+  align-items: center;
+  font-family: tahoma, Menlo, Roboto, RobotoNum, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+  justify-content: space-between;
+  cursor: pointer;
+
+  .trigger-lt,
+  .trigger-rt {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
+  }
+
+  .block-code-lang {
+    color: #88888888;
+  }
+
+  .block-code-icon {
+    display: list-item;
+    width: 24px;
+    height: 24px;
+    padding-left: 2px;
+    line-height: 22px;
+    text-align: center;
+
+    &::marker {
+      margin: 0;
+    }
+  }
+
+  .copy-code-btn {
+    border: 0;
+    height: 24px;
+    padding: 0 10px;
+    line-height: 1.5;
+    margin-left: 8px;
+    background-color: #d4d1d150;
+    border-radius: 5px;
     cursor: pointer;
+    color: inherit;
 
-    .trigger-lt,
-    .trigger-rt {
-      display: inline-flex;
-      align-items: center;
+    &:hover {
+      background-color: #d4d1d1aa;
     }
-
-    .block-code-icon {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-    }
-
-    .block-code-name {
-      margin-left: 5px;
-    }
-
-    .block-code-lang {
-      margin-left: 5px;
-      user-select: none;
-      color: #999;
-    }
-
-    .copy-code-btn {
-      border: 0;
-      height: 24px;
-      margin-left: 5px;
-      background: none;
-      cursor: pointer;
-      color: inherit;
+    &:active {
+      background-color: #d4d1d1ff;
     }
   }
+}
 
-  &-content {
-    margin: 0 1em 1em;
-  }
+.collect-block-content {
+  margin: 0 1em 1em;
 }
