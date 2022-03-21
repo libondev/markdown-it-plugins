@@ -1,0 +1,14 @@
+.noticeboard {
+  position: relative;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: .6rem;
+
+  &.danger {
+    background: rgba(0, 255, 140, 0.25);
+  }
+
+  &.tip {
+    background: rgba(255, 170, 181, 0.25);
+  }
+}

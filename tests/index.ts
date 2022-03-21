@@ -1,14 +1,13 @@
 import MarkdownIt from 'markdown-it'
 import {
-  codeLineNumbers,
-  collectBlockCode,
+  noticeboard,
 } from '../index'
-import { container } from '../plugins/container'
 
 import content from './content'
 
 import '../styles/collect-block-code.scss'
 import '../styles/container.scss'
+import '../styles/noticeboard.scss'
 
 const wrapper = document.getElementById('app')
 
@@ -18,6 +17,6 @@ const md = new MarkdownIt({
 })
   // .use(collectBlockCode, { copy: true, blockName: true })
   // .use(codeLineNumbers)
-  .use(container)
+  .use(noticeboard)
 
 wrapper!.innerHTML = md.render(content)
