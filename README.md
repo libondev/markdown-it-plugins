@@ -1,6 +1,6 @@
-# markdown-it-plugins
+# markdown-it-plugins [![NPM version](https://img.shields.io/npm/v/markdown-it-plugins?color=a1b858&label=)](https://www.npmjs.com/package/markdown-it-plugins)
 
-[![NPM version](https://img.shields.io/npm/v/markdown-it-plugins?color=a1b858&label=)](https://www.npmjs.com/package/markdown-it-plugins)
+
 
 ## Install
 
@@ -22,16 +22,17 @@ const markdown = new Markdown({
 ## Plugins
 
 ### collectBlockCode
-To add foldable functionality to a code block, you can also give it a code block name
+To add foldable functionality to a code block, you can also give it a code block name.
 
 ```js
-import { collectBlockCode } from 'markdown-it-plugin'
+import { collectBlockCode } from 'markdown-it-plugins'
+// Built-in preset styles
+import 'markdown-it-plugins/collect-block-code.css'
 
 markdown.use(collectBlockCode, options)
 ```
 
 #### Options
-
 ```ts
 interface CollectCodeBlock {
   /**
@@ -76,4 +77,14 @@ interface CollectCodeBlock {
    */
   alwaysOpen?: boolean
 }
+```
+
+#### Example
+```text
+
+```js : block name
+console.log(1)
+\```
+↑ Characters need to be deleted '/' escaped
+
 ```
