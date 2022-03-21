@@ -33,11 +33,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && unbuild && nr minify",
+    "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint .",
     "minify": "zx ./scripts/minify.mjs",
-    "prepublishOnly": "nr build",
+    "prepublishOnly": "nr build && nr minify",
     "release": "bumpp --commit --push --tag && pnpm publish",
     "start": "esno src/index.ts"
   },

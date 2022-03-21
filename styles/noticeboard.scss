@@ -1,8 +1,8 @@
 .noticeboard {
   position: relative;
-  border-radius: 4px;
+  margin: .6rem 0;
   padding: 1rem;
-  margin: .6rem;
+  border-radius: 4px;
 
   &.tip {
     background: rgba(0, 255, 140, 0.25);
