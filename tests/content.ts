@@ -1,6 +1,6 @@
 export default `
-?> ???
-!> !!!
+?> This is tip.
+!> This is danger.
 
 [链接](http://baidu.com/)
 

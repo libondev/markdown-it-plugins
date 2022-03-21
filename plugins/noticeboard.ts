@@ -13,7 +13,7 @@ export function noticeboard(md: Markdown) {
 
     if (regexp.test(content)) {
       const [, type, text] = content.match(regexp)!
-      return `<div class="noticeboard ${type === '!' ? 'tip' : 'danger'}">${text}</div>`
+      return `<div class="noticeboard ${type === '?' ? 'tip' : 'danger'}">${text}</div>`
     }
 
     return text(tokens, idx, ...rest)

@@ -4,11 +4,11 @@
   padding: 1rem;
   margin: .6rem;
 
-  &.danger {
+  &.tip {
     background: rgba(0, 255, 140, 0.25);
   }
 
-  &.tip {
+  &.danger {
     background: rgba(255, 170, 181, 0.25);
   }
 }
