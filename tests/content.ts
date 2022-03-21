@@ -4,6 +4,23 @@ export default `
 
 [链接](http://baidu.com/)
 
+::: details title message
+click me
+:::
+
+::: tip spoiler
+  message
+:::
+
+::: danger spoiler
+  message
+:::
+
+::: warning spoiler
+  message
+:::
+
+
 \`\`\`html{1} : 123
 <div></div>
 \`\`\`
@@ -16,4 +33,5 @@ const c = 3
 console.log(a, b, c)\\n
 
 \`\`\`
+
 `

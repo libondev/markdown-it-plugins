@@ -1,6 +1,6 @@
 # markdown-it-plugins [![NPM version](https://img.shields.io/npm/v/markdown-it-plugins?color=a1b858&label=)](https://www.npmjs.com/package/markdown-it-plugins)
 
-
+A collection of plug-ins that extend the Markdown-it parser.
 
 ## Install
 
@@ -11,15 +11,53 @@ npm i markdown-it-plugins -D
 ## Usage
 ```js
 import MarkdownIt from 'markdown-it'
-import { collectBlockCode } from 'markdown-it-plugin'
+import { container } from 'markdown-it-plugin'
 
 const markdown = new Markdown({
   // ...
 })
-  .use(collectBlockCode)
+  .use(container)
 ```
 
 ## Plugins
+
+### container
+Use Vue.js style content blocks to present your message.
+
+```js
+import { container } from 'markdown-it-plugins'
+import 'markdown-it-plugins/container.css'
+
+markdown.use(container)
+```
+
+#### Example
+Optional values: [**tip** | **warning** | **danger** | **details** ]
+
+TIP:
+```
+::: <type> [title]
+  content message
+:::
+```
+
+```
+::: tip
+message
+:::
+
+::: warning
+message
+:::
+
+::: danger
+message
+:::
+
+::: details title message
+message
+:::
+```
 
 ### collectBlockCode
 To add foldable functionality to a code block, you can also give it a code block name.

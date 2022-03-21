@@ -1,26 +1,23 @@
 import MarkdownIt from 'markdown-it'
-
 import {
+  codeLineNumbers,
   collectBlockCode,
-} from '../dist/index'
+} from '../index'
+import { container } from '../plugins/container'
+
+import content from './content'
 
 import '../styles/collect-block-code.scss'
+import '../styles/container.scss'
 
 const wrapper = document.getElementById('app')
 
-const markdown = new MarkdownIt({
+const md = new MarkdownIt({
   html: true,
   linkify: true,
 })
-  .use(collectBlockCode, { copy: true, blockName: true })
+  // .use(collectBlockCode, { copy: true, blockName: true })
+  // .use(codeLineNumbers)
+  .use(container)
 
-const code = `
-?> ???
-!> !!!
-
-\`\`\`html : 123
-<div></div>
-\`\`\`
-`
-
-wrapper!.innerHTML = markdown.render(code)
+wrapper!.innerHTML = md.render(content)
