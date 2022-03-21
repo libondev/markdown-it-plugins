@@ -1,9 +1,9 @@
 
 import type {
   Markdown,
-  MarkdownTokens,
   MarkdownOptions,
-  MarkdownRenderer
+  MarkdownRenderer,
+  MarkdownTokens,
 } from '../types/index'
 
 export interface CollectCodeBlock {
@@ -22,9 +22,8 @@ export function collectBlockCode(
     copy = false,
     separator = ':',
     copyText = 'Copy',
-  }: CollectCodeBlock = {}
+  }: CollectCodeBlock = {},
 ) {
-
   const fence = md.renderer.rules.fence!
   md.renderer.rules.fence = (
     tokens: MarkdownTokens,
@@ -35,9 +34,8 @@ export function collectBlockCode(
 
     let template = `<details class="collect-block-code"><summary class="collect-block-trigger"><div class="trigger-lt"><i class="block-code-icon"></i>${blockName ? `<span class="block-code-name">${name}</span>` : ''}</div>`
 
-    if (copy || blockName) {
+    if (copy || blockName)
       template += `<div class="trigger-rt">${lang ? `<span class="block-code-lang">${language}</span>` : ''}${copy ? `<button class="copy-code-btn">${copyText}</button>` : ''}</div>`
-    }
 
     template += `</summary><div class="collect-block-content">${fence(tokens, idx, ...args)}</div></details>`
 

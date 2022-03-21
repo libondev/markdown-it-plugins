@@ -1,10 +1,10 @@
+import MarkdownIt from 'markdown-it'
+
 import {
-  collectBlockCode
+  collectBlockCode,
 } from '../dist/index'
 
 import '../styles/collect-block-code.scss'
-
-import MarkdownIt from "markdown-it";
 
 const wrapper = document.getElementById('app')
 
@@ -13,8 +13,6 @@ const markdown = new MarkdownIt({
   linkify: true,
 })
   .use(collectBlockCode, { copy: true, blockName: true })
-
-const h1 = '# Hello'
 
 const code = `
 ?> ???

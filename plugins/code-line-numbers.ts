@@ -7,8 +7,7 @@ interface CodeLineNumbers {
   copyText?: string
 }
 
-export default function (md: Markdown, options: CodeLineNumbers = {}) {
-
+export default function(md: Markdown, options: CodeLineNumbers = {}) {
   md.renderer.rules.fence = (tokens, idx, options, env, slf): string => {
     // const token = tokens[idx]
 
