@@ -4,8 +4,11 @@
   "packageManager": "pnpm@6.32.3",
   "description": "",
   "keywords": [
+    "markdown",
     "markdown-it",
-    "plugins"
+    "markdown-it-plugin",
+    "plugins",
+    "parser"
   ],
   "homepage": "https://github.com/banlify/markdown-it-plugins#readme",
   "bugs": {
