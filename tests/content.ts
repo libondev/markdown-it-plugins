@@ -21,8 +21,12 @@ click me
 :::
 
 
-\`\`\`html{1} : 123
-<div></div>
+\`\`\`html : 123
+<div>
+  <p>
+    <span></span>
+  </p>
+</div>
 \`\`\`
 
 \`\`\`js{1-3} : 123
@@ -30,8 +34,7 @@ const a = 1
 const b = 2
 const c = 3
 
-console.log(a, b, c)\\n
-
+console.log(a, b, c)
 \`\`\`
 
 `

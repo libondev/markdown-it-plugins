@@ -57,6 +57,7 @@
     "esno": "^0.14.1",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.0.1",
+    "highlight.js": "^11.5.0",
     "markdown-it": "^12.3.2",
     "pnpm": "^6.32.3",
     "rimraf": "^3.0.2",
