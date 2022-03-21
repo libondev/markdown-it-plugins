@@ -11,12 +11,12 @@ npm i markdown-it-plugins -D
 ## Usage
 ```js
 import MarkdownIt from 'markdown-it'
-import { container } from 'markdown-it-plugin'
+import { noticeboard } from 'markdown-it-plugin'
 
 const markdown = new Markdown({
   // ...
 })
-  .use(container)
+  .use(noticeboard)
 ```
 
 ## Plugins
@@ -26,6 +26,7 @@ Use Vue.js style content blocks to present your message.
 
 ```js
 import { container } from 'markdown-it-plugins'
+// preset styles
 import 'markdown-it-plugins/container.css'
 
 markdown.use(container)
@@ -59,12 +60,28 @@ message
 :::
 ```
 
+### noticeboard
+A lightweight prompt box containing only tip and Danger types.
+
+```js
+import { noticeboard } from 'markdown-it-plugins'
+import 'markdown-it-plugins/noticeboard.css'
+
+markdown.use(noticeboard)
+```
+
+#### Example
+
+```
+?> This is tip.
+!> This is danger.
+```
+
 ### collectBlockCode
 To add foldable functionality to a code block, you can also give it a code block name.
 
 ```js
 import { collectBlockCode } from 'markdown-it-plugins'
-// Built-in preset styles
 import 'markdown-it-plugins/collect-block-code.css'
 
 markdown.use(collectBlockCode, options)
