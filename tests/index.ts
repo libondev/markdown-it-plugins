@@ -3,15 +3,16 @@ import MarkdownIt from 'markdown-it'
 import {
   collectBlockCode,
   container,
+  extendLinks,
   noticeboard,
 } from '../src/index'
 
 import content from './content'
 
 import 'highlight.js/styles/github.css'
-import '../styles/collect-block-code.scss'
-import '../styles/container.scss'
-import '../styles/noticeboard.scss'
+import '../src/styles/collect-block-code.scss'
+import '../src/styles/container.scss'
+import '../src/styles/noticeboard.scss'
 
 const wrapper = document.getElementById('app')
 
@@ -25,9 +26,10 @@ const md = new MarkdownIt({
     return `<pre data-lang="unknown"><div>${code}</div></pre>`
   },
 })
-  .use(collectBlockCode, { copy: true, blockName: true })
+  // .use(collectBlockCode, { copy: true, blockName: true })
   // .use(codeLineNumbers)
-  .use(noticeboard)
-  .use(container)
+  // .use(noticeboard)
+  // .use(container)
+  .use(extendLinks)
 
 wrapper!.innerHTML = md.render(content)

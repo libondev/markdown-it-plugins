@@ -33,8 +33,9 @@ markdown.use(container)
 ```
 
 #### Example
-Optional values: [**tip** | **warning** | **danger** | **details** ]
+Optional values: [ **details** | **tip** | **danger** | **warning** ]
 ![container](snapshot/container.png)
+
 
 TIP:
 ```
@@ -52,18 +53,17 @@ message
 message
 :::
 
-::: warning spoiler
+::: danger spoiler
 message
 :::
 
-::: danger spoiler
+::: warning spoiler
 message
 :::
 ```
 
 ### noticeboard
 A lightweight prompt box containing only tip and Danger types.
-![noticeboard](snapshot/noticeboard.png)
 
 ```js
 import { noticeboard } from 'markdown-it-plugins'
@@ -73,15 +73,16 @@ markdown.use(noticeboard)
 ```
 
 #### Example
+![noticeboard](snapshot/noticeboard.png)
 
 ```
 ?> This is tip.
 !> This is danger.
 ```
 
+
 ### collectBlockCode
 To add foldable functionality to a code block, you can also give it a code block name.
-![collect-block-code](snapshot/collect-block-code.png)
 
 ```js
 import { collectBlockCode } from 'markdown-it-plugins'
@@ -138,8 +139,14 @@ interface CollectCodeBlock {
 ```
 
 #### Example
+![collect-block-code](snapshot/collect-block-code.png)
+
 ````
 ```js : block name
-console.log(1)
+const a = 1
+const b = 2
+const c = 3
+
+console.log(a, b, c)
 ```
 ````

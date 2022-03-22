@@ -1,21 +1,49 @@
-import type {
-  Markdown,
-  MarkdownPluginRestArgs,
-  MarkdownTokens,
-} from '../types/index'
+import type { Markdown } from '../types/index'
 
 export function noticeboard(md: Markdown) {
-  const regexp = /([!|?])\>\s(.*)/
-  const text = md.renderer.rules.text!
+  const tipMarker = '?> '
+  const dangerMarker = '!> '
 
-  md.renderer.rules.text = (tokens: MarkdownTokens, idx: number, ...rest: MarkdownPluginRestArgs) => {
-    const { content } = tokens[idx]
+  md.block.ruler.before('paragraph', 'noticeboard', (state, startLine, endLine, silent) => {
+    // if it's indented more than 3 spaces, it should be a code block
+    if (state.sCount[startLine] - state.blkIndent >= 4) return false
 
-    if (regexp.test(content)) {
-      const [, type, text] = content.match(regexp)!
-      return `<div class="noticeboard ${type === '?' ? 'tip' : 'danger'}">${text}</div>`
+    if (silent) return true
+
+    const max = state.eMarks[startLine]
+    const pos = state.bMarks[startLine] + state.tShift[startLine]
+    const text = state.src.substring(pos, max).trim()
+
+    if (text.startsWith(tipMarker) || text.startsWith(dangerMarker)) {
+      let token, type, markup
+
+      if (text.startsWith(tipMarker)) {
+        type = 'tip'
+        markup = tipMarker
+      }
+      else {
+        type = 'danger'
+        markup = dangerMarker
+      }
+
+      token = state.push('heading_open', 'div', 1)
+      token.attrs = [['class', `noticeboard ${type}`]]
+      token.markup = markup
+      token.map = [startLine, state.line]
+
+      token = state.push('inline', '', 0)
+      token.map = [startLine, state.line]
+      token.content = text.substring(tipMarker.length)
+      token.children = []
+
+      token = state.push('heading_close', 'div', -1)
+      token.markup = markup
+
+      state.line = startLine + 1
+
+      return true
     }
 
-    return text(tokens, idx, ...rest)
-  }
+    return false
+  })
 }
