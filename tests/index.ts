@@ -4,7 +4,7 @@ import {
   collectBlockCode,
   container,
   noticeboard,
-} from '../index'
+} from '../src/index'
 
 import content from './content'
 

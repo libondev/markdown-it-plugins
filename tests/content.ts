@@ -2,8 +2,6 @@ export default `
 ?> This is tip.
 !> This is danger.
 
-[链接](http://baidu.com/)
-
 ::: details title message
 click me
 :::
@@ -21,15 +19,15 @@ click me
 :::
 
 
-\`\`\`html : 123
-<div>
-  <p>
-    <span></span>
-  </p>
-</div>
+\`\`\`js : block name
+const a = 1
+const b = 2
+const c = 3
+
+console.log(a, b, c)
 \`\`\`
 
-\`\`\`js{1-3} : 123
+\`\`\`js : block name
 const a = 1
 const b = 2
 const c = 3

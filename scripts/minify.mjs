@@ -11,7 +11,7 @@ async function minify() {
   await $`uglifyjs -c -m -o dist/index.mjs -- dist/index.mjs`
 
   let filename = '', filepath = ''
-  fg.sync('./styles/*.scss').map(async(path) => {
+  fg.sync('./src/styles/*.scss').map(async(path) => {
     filename = path.split('/').pop().split('.')[0]
     filepath = `./dist/${filename}.css`
 
