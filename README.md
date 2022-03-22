@@ -135,11 +135,8 @@ interface CollectCodeBlock {
 ```
 
 #### Example
-```text
-
+````
 ```js : block name
 console.log(1)
-\```
-↑ Characters need to be deleted '/' escaped
-
 ```
+````
