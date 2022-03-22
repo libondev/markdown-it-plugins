@@ -33,7 +33,8 @@
     "./*": "./dist/*"
   },
   "files": [
-    "dist"
+    "dist",
+    "snapshot"
   ],
   "scripts": {
     "build": "rimraf dist && unbuild",
