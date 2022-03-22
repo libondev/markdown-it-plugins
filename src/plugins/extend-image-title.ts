@@ -1,6 +1,6 @@
 import type { Markdown, MarkdownPluginRestArgs, MarkdownTokens } from '../types/index'
 
-export function extendImage(md: Markdown) {
+export function extendImageTitle(md: Markdown) {
   const image = md.renderer.rules.image!
   md.renderer.rules.image = (tokens: MarkdownTokens, idx: number, ...args: MarkdownPluginRestArgs) => {
     const token = tokens[idx]

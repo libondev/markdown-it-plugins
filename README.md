@@ -32,7 +32,7 @@ import 'markdown-it-plugins/container.css'
 markdown.use(container)
 ```
 
-#### Example
+#### example
 Optional values: [ **details** | **tip** | **danger** | **warning** ]
 ![container](snapshot/container.png)
 
@@ -72,7 +72,7 @@ import 'markdown-it-plugins/noticeboard.css'
 markdown.use(noticeboard)
 ```
 
-#### Example
+#### example
 ![noticeboard](snapshot/noticeboard.png)
 
 ```
@@ -91,7 +91,7 @@ import 'markdown-it-plugins/collect-block-code.css'
 markdown.use(collectBlockCode, options)
 ```
 
-#### Options
+#### options
 ```ts
 interface CollectCodeBlock {
   /**
@@ -138,7 +138,7 @@ interface CollectCodeBlock {
 }
 ```
 
-#### Example
+#### example
 ![collect-block-code](snapshot/collect-block-code.png)
 
 ````
@@ -150,3 +150,20 @@ const c = 3
 console.log(a, b, c)
 ```
 ````
+
+### extendImageTitle
+Set additional properties at the position of the image's title parameter.
+
+```js
+import { extendImageTitle } from 'markdown-it-plugins'
+
+markdown.use(extendImageTitle)
+```
+
+#### example
+
+```md
+![alt_text](image_url 'width=300px&height=100px&style=border:3px solid #f00;')
+```
+
+![extend-image-title](snapshot/extend-image-title.png)

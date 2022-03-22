@@ -3,7 +3,7 @@ import MarkdownIt from 'markdown-it'
 import {
   collectBlockCode,
   container,
-  extendLinks,
+  extendImageTitle,
   noticeboard,
 } from '../src/index'
 
@@ -30,6 +30,6 @@ const md = new MarkdownIt({
   // .use(codeLineNumbers)
   // .use(noticeboard)
   // .use(container)
-  .use(extendLinks)
+  .use(extendImageTitle)
 
 wrapper!.innerHTML = md.render(content)
