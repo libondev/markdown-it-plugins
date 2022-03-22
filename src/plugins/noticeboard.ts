@@ -8,13 +8,13 @@ export function noticeboard(md: Markdown) {
     // if it's indented more than 3 spaces, it should be a code block
     if (state.sCount[startLine] - state.blkIndent >= 4) return false
 
-    if (silent) return true
-
     const max = state.eMarks[startLine]
     const pos = state.bMarks[startLine] + state.tShift[startLine]
     const text = state.src.substring(pos, max).trim()
 
     if (text.startsWith(tipMarker) || text.startsWith(dangerMarker)) {
+      if (silent) return true
+
       let token, type, markup
 
       if (text.startsWith(tipMarker)) {
