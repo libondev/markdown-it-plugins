@@ -167,9 +167,21 @@ markdown.use(extendImageTitle)
 ```
 
 #### example
+![extend-image-title](snapshot/extend-image-title.png)
 
 ```md
 ![alt_text](image_url 'width=300px&height=100px&style=border:3px solid #f00;')
 ```
 
-![extend-image-title](snapshot/extend-image-title.png)
+### codeLineNumbers
+Add a line count display to your code block.
+
+```js
+import { codeLineNumbers } from 'markdown-it-plugins'
+import 'markdown-it-plugins/code-line-numbers.scss'
+
+markdown.use(extendImageTitle)
+```
+
+#### example
+![](snapshot/code-line-numbers.png)

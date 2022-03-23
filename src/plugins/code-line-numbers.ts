@@ -5,7 +5,7 @@ export function codeLineNumbers(md: Markdown) {
   const fence = md.renderer.rules.fence!
   md.renderer.rules.fence = (tokens: MarkdownTokens, idx: number, ...args: MarkdownPluginRestArgs) => {
     const lineNumbersCode = `${[...new Array(tokens[idx].content.split('\n').length).keys()]
-      .join('</li><li class="line">')}</li>`.slice(6) // slice '0</span><br>'
+      .join('</li><li class="line">')}</li>`.slice(6) // slice '0</li>'
 
     return `
       <ul class="code-line-numbers">
