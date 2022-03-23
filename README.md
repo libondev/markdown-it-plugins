@@ -84,11 +84,17 @@ markdown.use(noticeboard)
 ### collectBlockCode
 To add foldable functionality to a code block, you can also give it a code block name.
 
-```js
-import { collectBlockCode } from 'markdown-it-plugins'
+```ts
+import {
+  // TypeScript
+  type CollectBlockCode,
+  collectBlockCode,
+} from 'markdown-it-plugins'
 import 'markdown-it-plugins/collect-block-code.css'
 
 markdown.use(collectBlockCode, options)
+// TypeScript
+markdown.use<CollectBlockCode>(collectBlockCode, options)
 ```
 
 #### options
