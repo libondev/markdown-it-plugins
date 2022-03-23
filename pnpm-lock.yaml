@@ -12,6 +12,7 @@ importers:
       '@types/node': ^17.0.21
       '@types/uglify-js': ^3.13.1
       bumpp: ^7.1.1
+      copy-text-to-clipboard: ^3.0.1
       eslint: ^8.10.0
       esno: ^0.14.1
       fast-glob: ^3.2.11
@@ -29,6 +30,7 @@ importers:
       vite: ^2.8.6
       zx: ^6.0.6
     dependencies:
+      copy-text-to-clipboard: 3.0.1
       markdown-it-container: 3.0.0
     devDependencies:
       '@antfu/eslint-config': 0.18.9_eslint@8.11.0+typescript@4.6.2
@@ -1005,6 +1007,11 @@ packages:
     dependencies:
       safe-buffer: 5.1.2
     dev: true
+
+  /copy-text-to-clipboard/3.0.1:
+    resolution: {integrity: sha512-rvVsHrpFcL4F2P8ihsoLdFHmd404+CMg71S756oRSeQgqk51U3kicGdnvfkrxva0xXH92SjGS62B0XIJsbh+9Q==}
+    engines: {node: '>=12'}
+    dev: false
 
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}

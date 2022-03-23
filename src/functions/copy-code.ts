@@ -1,9 +1,7 @@
+import copyText from 'copy-text-to-clipboard'
+
 export function copyCode() {
   if (typeof window === 'undefined')
-    return
-
-  // 如果不支持复制到剪切板则不用监听父级事件
-  if (!navigator.clipboard || !navigator.clipboard.writeText)
     return
 
   window.addEventListener('load', () => {
@@ -16,9 +14,16 @@ export function copyCode() {
 
       // const text = target.parentNode!.parentNode!.previousElementSibling!.textContent!
       const text = target.parentNode!.parentNode?.nextSibling?.textContent as string
-      navigator.clipboard.writeText(text)
-      // eslint-disable-next-line no-console
-      console.log('copy code successfully.')
+
+      if (copyText(text))
+        target.style.background = '#e1f3d8'
+
+      else
+        target.style.background = '#fde2e2'
+
+      setTimeout(() => {
+        target.style.background = ''
+      }, 1000)
     }
 
     window.addEventListener('click', onClickHTMLBody)

@@ -71,6 +71,7 @@
     "zx": "^6.0.6"
   },
   "dependencies": {
+    "copy-text-to-clipboard": "^3.0.1",
     "markdown-it-container": "^3.0.0"
   }
 }

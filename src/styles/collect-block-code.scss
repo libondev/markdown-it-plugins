@@ -1,6 +1,6 @@
 .collect-block-code {
   margin: 1rem 0;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   border: 1px solid #eaeaea;
   overflow: hidden;
 }
@@ -8,7 +8,8 @@
 .collect-block-trigger {
   display: flex;
   padding: 0 1rem;
-  height: 38px;
+  height: 2.5rem;
+  line-height: 2.5rem;
   align-items: center;
   font-family: tahoma, Menlo, Roboto, RobotoNum, PingFang SC, Hiragino Sans GB,
     Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -40,7 +41,9 @@
 
   .copy-code-btn {
     border: 0;
+    min-width: 54px;
     height: 24px;
+    font-size: 14px;
     padding: 0 10px;
     line-height: 1.5;
     margin-left: 8px;
@@ -59,5 +62,5 @@
 }
 
 .collect-block-content {
-  margin: 0 1em 1em;
+  margin: 0 1rem 1rem;
 }
