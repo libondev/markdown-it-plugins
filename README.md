@@ -174,7 +174,7 @@ markdown.use(extendImageTitle)
 ```
 
 ### codeLineNumbers
-Add a line count display to your code block.(**Need to register before other plugins!**)
+Add a line count display to your code block.(**Need to register before other plugins!, The final effect may vary depending on your style**)
 
 ```js
 import { codeLineNumbers } from 'markdown-it-plugins'
