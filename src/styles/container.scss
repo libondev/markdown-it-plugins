@@ -5,13 +5,13 @@
 .prompt-container.tip,
 .prompt-container.danger,
 .prompt-container.warning {
-  padding: 0.1rem 1.5rem;
+  padding: 1px 1.5rem;
   border-left-width: 0.5rem;
   border-left-style: solid;
-  margin: 1rem 0;
 }
 
 .prompt-container {
+  margin: 1rem 0;
   color: #2c3e50;
 
   .prompt-container-title {
@@ -63,7 +63,7 @@
     display: block;
     position: relative;
     border-radius: 4px;
-    padding: 1.1rem 1.5em;
+    padding: 1rem 1.5rem;
     background-color: #eee;
 
     h4 {
