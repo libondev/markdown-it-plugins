@@ -7,8 +7,11 @@
     "markdown",
     "markdown-it",
     "markdown-it-plugin",
+    "line-numbers",
+    "container",
     "plugins",
-    "parser"
+    "parser",
+    "attrs"
   ],
   "homepage": "https://github.com/banlify/markdown-it-plugins#readme",
   "bugs": {

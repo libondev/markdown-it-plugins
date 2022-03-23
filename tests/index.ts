@@ -1,6 +1,7 @@
 import hljs from 'highlight.js'
 import MarkdownIt from 'markdown-it'
 import {
+  codeLineNumbers,
   collectBlockCode,
   container,
   extendImageTitle,
@@ -11,6 +12,7 @@ import content from './content'
 
 import 'highlight.js/styles/github.css'
 import '../src/styles/collect-block-code.scss'
+import '../src/styles/code-line-numbers.scss'
 import '../src/styles/container.scss'
 import '../src/styles/noticeboard.scss'
 
@@ -21,15 +23,15 @@ const md = new MarkdownIt({
   linkify: true,
   highlight(code: string, language: string) {
     if (language && hljs.getLanguage(language))
-      return `<pre data-lang="${language}"><div>${hljs.highlight(code, { language }).value}</div></pre>`
+      return `<pre data-lang="${language}"><code>${hljs.highlight(code, { language }).value}</code></pre>`
 
-    return `<pre data-lang="unknown"><div>${code}</div></pre>`
+    return `<pre data-lang="unknown"><code>${code}</code></pre>`
   },
 })
-  // .use(collectBlockCode, { copy: true, blockName: true })
-  // .use(codeLineNumbers)
-  // .use(noticeboard)
-  // .use(container)
+  .use(codeLineNumbers)
+  .use(collectBlockCode, { copy: true, blockName: true })
+  .use(noticeboard)
+  .use(container)
   .use(extendImageTitle)
 
 wrapper!.innerHTML = md.render(content)

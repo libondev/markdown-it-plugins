@@ -13,7 +13,7 @@ export function copyCode() {
         return
 
       // const text = target.parentNode!.parentNode!.previousElementSibling!.textContent!
-      const text = target.parentNode!.parentNode?.nextSibling?.textContent as string
+      const text = target.closest('.collect-block-code')?.querySelector('pre')!.textContent as string
 
       if (copyText(text))
         target.style.background = '#e1f3d8'

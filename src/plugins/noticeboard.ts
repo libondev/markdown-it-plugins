@@ -26,7 +26,7 @@ export function noticeboard(md: Markdown) {
         markup = dangerMarker
       }
 
-      token = state.push('heading_open', 'div', 1)
+      token = state.push('notice_open', 'div', 1)
       token.attrs = [['class', `noticeboard ${type}`]]
       token.markup = markup
       token.map = [startLine, state.line]
@@ -36,7 +36,7 @@ export function noticeboard(md: Markdown) {
       token.content = text.substring(tipMarker.length)
       token.children = []
 
-      token = state.push('heading_close', 'div', -1)
+      token = state.push('notice_close', 'div', -1)
       token.markup = markup
 
       state.line = startLine + 1
