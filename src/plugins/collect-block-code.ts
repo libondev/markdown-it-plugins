@@ -78,9 +78,4 @@ export function collectBlockCode(
 
     return template
   }
-
-  copy && import('../functions/copy-code')
-    .then(({ copyCode }) => {
-      copyCode()
-    })
 }
