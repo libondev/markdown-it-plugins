@@ -18,18 +18,27 @@
 
   .trigger-lt,
   .trigger-rt {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    overflow: hidden;
   }
 
   .block-code-lang {
     color: #88888888;
   }
 
+  .block-code-name {
+    flex: 1;
+    margin: 0 10px 0 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   .block-code-icon {
     display: list-item;
-    width: 24px;
     height: 24px;
+    min-width: 24px;
     padding-left: 2px;
     line-height: 22px;
     text-align: center;

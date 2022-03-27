@@ -69,10 +69,10 @@ export function collectBlockCode(
   ): string => {
     const [language, name] = tokens[idx].info.split(separator).map((s: string) => s.trim())
 
-    let template = `<details class="collect-block-code" ${open ? 'open' : ''}><summary class="collect-block-trigger"><div class="trigger-lt"><i class="block-code-icon"></i>${blockName && name ? `<span class="block-code-name">${name}</span>` : ''}</div>`
+    let template = `<details class="collect-block-code" ${open ? 'open' : ''}><summary class="collect-block-trigger"><i class="block-code-icon"></i>${blockName && name ? `<p class="block-code-name">${name}</p>` : ''}`
 
     if (copy || blockName)
-      template += `<div class="trigger-rt">${lang ? `<span class="block-code-lang">${language}</span>` : ''}${copy ? `<button class="copy-code-btn">${copyText}</button>` : ''}</div>`
+      template += `${lang ? `<span class="block-code-lang">${language}</span>` : ''}${copy ? `<button class="copy-code-btn">${copyText}</button>` : ''}`
 
     template += `</summary><div class="collect-block-content">${fence(tokens, idx, ...args)}</div></details>`
 
