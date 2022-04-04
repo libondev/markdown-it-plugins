@@ -14,6 +14,7 @@ export function extendImageTitle(md: Markdown) {
         const attrs = token.attrs![titleIndex][1].split('&')
 
         token.attrSet('title', '')
+        token.attrSet('loading', 'lazy')
         attrs.forEach((item) => {
           [key, value] = item.split('=')
 

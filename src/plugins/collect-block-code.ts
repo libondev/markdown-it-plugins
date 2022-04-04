@@ -62,14 +62,20 @@ export function collectBlockCode(
   }: CollectCodeBlock = {},
 ) {
   const fence = md.renderer.rules.fence!
+  let template: string, openStatus: string
   md.renderer.rules.fence = (
     tokens: MarkdownTokens,
     idx: number,
     ...args: [options: MarkdownOptions, env: unknown, self: MarkdownRenderer]
   ): string => {
-    const [language, name] = tokens[idx].info.split(separator).map((s: string) => s.trim())
+    const [language, name, status] = tokens[idx].info.split(separator).map((s: string) => s.trim())
 
-    let template = `<details class="collect-block-code" ${open ? 'open' : ''}><summary class="collect-block-trigger"><i class="block-code-icon"></i>${blockName && name ? `<p class="block-code-name">${name}</p>` : '<i style="flex:1"></i>'}`
+    if (status)
+      openStatus = status === 'close' ? '' : status === 'open' ? 'open' : status
+    else
+      openStatus = open ? 'open' : ''
+
+    template = `<details class="collect-block-code" ${openStatus ? 'open' : ''}><summary class="collect-block-trigger"><i class="block-code-icon"></i>${blockName && name ? `<p class="block-code-name">${name}</p>` : '<i style="flex:1"></i>'}`
 
     if (copy || blockName)
       template += `${lang ? `<span class="block-code-lang">${language}</span>` : ''}${copy ? `<button class="copy-code-btn">${copyText}</button>` : ''}`
