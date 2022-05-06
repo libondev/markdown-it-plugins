@@ -1,7 +1,7 @@
 .collect-block-code {
   margin: 1rem 0;
   border-radius: 0.4rem;
-  border: 1px solid #eaeaea;
+  border: 1px dashed #88888888;
   overflow: hidden;
 }
 
@@ -49,24 +49,30 @@
     }
   }
 
+
+  @media (any-hover: hover) {
+    .copy-code-btn:hover {
+      background-color: #88888855;
+    }
+  }
+
   .copy-code-btn {
     border: 0;
-    min-width: 54px;
     height: 24px;
     font-size: 14px;
-    padding: 0 10px;
-    line-height: 1.5;
+    padding: 0 5px;
     margin-left: 8px;
-    background-color: #d4d1d150;
+    background-color: #88888844;
     border-radius: 5px;
     cursor: pointer;
     color: inherit;
 
-    &:hover {
-      background-color: #d4d1d1aa;
+    &::before {
+      content: attr(data-text)
     }
+
     &:active {
-      background-color: #d4d1d1ff;
+      background-color: #88888833;
     }
   }
 }

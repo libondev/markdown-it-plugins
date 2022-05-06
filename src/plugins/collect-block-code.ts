@@ -56,7 +56,7 @@ export function collectBlockCode(
     lang = true,
     copy = false,
     open = true,
-    copyText = 'Copy',
+    copyText = 'copy',
     separator = ':',
     blockName = false,
   }: CollectCodeBlock = {},
@@ -77,10 +77,12 @@ export function collectBlockCode(
 
     template = `<details class="collect-block-code" ${openStatus ? 'open' : ''}><summary class="collect-block-trigger"><i class="block-code-icon"></i>${blockName && name ? `<p class="block-code-name">${name}</p>` : '<i style="flex:1"></i>'}`
 
-    if (copy || blockName)
-      template += `${lang ? `<span class="block-code-lang">${language}</span>` : ''}${copy ? `<button class="copy-code-btn">${copyText}</button>` : ''}`
+    const code = fence(tokens, idx, ...args)
 
-    template += `</summary><div class="collect-block-content">${fence(tokens, idx, ...args)}</div></details>`
+    if (copy || blockName)
+      template += `${lang ? `<span class="block-code-lang">${language}</span>` : ''}${copy ? `<button class="copy-code-btn" data-text="${copyText}" data-code='${code}'></button>` : ''}`
+
+    template += `</summary><div class="collect-block-content">${code}</div></details>`
 
     return template
   }
