@@ -11,7 +11,7 @@ npm i markdown-it-plugins -D
 ## Usage
 ```js
 import MarkdownIt from 'markdown-it'
-import { noticeboard } from 'markdown-it-plugin'
+import { noticeboard } from 'markdown-it-plugins'
 
 const markdown = new Markdown({
   // ...
