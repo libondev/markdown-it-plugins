@@ -178,7 +178,7 @@ Add a line count display to your code block.(**Need to register before other plu
 
 ```js
 import { codeLineNumbers } from 'markdown-it-plugins'
-import 'markdown-it-plugins/code-line-numbers.scss'
+import 'markdown-it-plugins/code-line-numbers.css'
 
 markdown.use(extendImageTitle)
 ```
