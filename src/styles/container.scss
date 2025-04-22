@@ -5,17 +5,17 @@
 .prompt-container.tip,
 .prompt-container.danger,
 .prompt-container.warning {
-  padding: 1px 1.5rem;
+  padding: 1px 1rem;
   border-left-width: 0.5rem;
   border-left-style: solid;
 }
 
 .prompt-container {
-  margin: 1rem 0;
-  color: #2c3e50;
+  margin-block: 4px;
+  border-radius: 8px;
 
   .prompt-container-title {
-    font-weight: 600;
+    font-weight: bold;
   }
 
   & p {
@@ -23,56 +23,42 @@
   }
 
   &.tip {
-    border-color: #42b983;
-    background-color: #f3f4f5;
-
-    a {
-      color: #3eaf7c;
-    }
+    border-color: var(--color-green-500, #10b98188);
+    background-color: #10b98133;
   }
 
   &.warning {
-    border-color: #e7c000;
-    background-color: #fffae3;
-
-    &,
-    a {
-      color: #746000;
-    }
+    border-color: var(--color-yellow-500, #f59e0b88);
+    background-color: #f59e0b33;
 
     .prompt-container-title {
-      color: #ad9000;
+      color: var(--color-yellow-500, #f59e0b);
     }
   }
 
   &.danger {
-    border-color: #c00;
-    background-color: #ffe0e0;
-
-    &,
-    a {
-      color: #600;
-    }
+    border-color: var(--color-red-500, #ef444488);
+    background-color: #ef444433;
 
     .prompt-container-title {
-      color: #900;
+      color: var(--color-red-500, #ef4444);
     }
   }
 
   &.details {
     display: block;
     position: relative;
-    border-radius: 4px;
-    padding: 1rem 1.5rem;
-    background-color: #eee;
-
-    h4 {
-      margin-top: 0;
-    }
+    padding: 0.8rem 1rem;
+    background-color: #6b728033;
 
     summary {
-      outline: 0;
+      user-select: none;
+      font-weight: 500;
       cursor: pointer;
+
+      & > span {
+        padding-left: 0.25em;
+      }
     }
 
     figure:last-child,

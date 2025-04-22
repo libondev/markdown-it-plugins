@@ -1,49 +1,68 @@
-import type { Markdown } from '../types/index'
+import type { Markdown } from "../types/index"
 
 export function noticeboard(md: Markdown) {
-  const tipMarker = '?> '
-  const dangerMarker = '!> '
+  const tipMarker = "-> "
+  const warningMarker = "?> "
+  const dangerMarker = "!> "
 
-  md.block.ruler.before('paragraph', 'noticeboard', (state, startLine, endLine, silent) => {
-    // if it's indented more than 3 spaces, it should be a code block
-    if (state.sCount[startLine] - state.blkIndent >= 4) return false
+  const typeClassName = {
+    tip: "bg-gray-500/20",
+    warning: "bg-yellow-500/20",
+    danger: "bg-red-500/20",
+  } as const
 
-    const max = state.eMarks[startLine]
-    const pos = state.bMarks[startLine] + state.tShift[startLine]
-    const text = state.src.substring(pos, max).trim()
+  md.block.ruler.before(
+    "paragraph",
+    "noticeboard",
+    (state, startLine, endLine, silent) => {
+      // if it's indented more than 3 spaces, it should be a code block
+      if (state.sCount[startLine] - state.blkIndent >= 4) return false
 
-    if (text.startsWith(tipMarker) || text.startsWith(dangerMarker)) {
-      if (silent) return true
+      const max = state.eMarks[startLine]
+      const pos = state.bMarks[startLine] + state.tShift[startLine]
+      const text = state.src.substring(pos, max).trim()
 
-      let token, type, markup
+      if (
+        text.startsWith(tipMarker) ||
+        text.startsWith(dangerMarker) ||
+        text.startsWith(warningMarker)
+      ) {
+        if (silent) return true
 
-      if (text.startsWith(tipMarker)) {
-        type = 'tip'
-        markup = tipMarker
+        let token, type: keyof typeof typeClassName, markup: typeof tipMarker | typeof warningMarker | typeof dangerMarker
+
+        if (text.startsWith(tipMarker)) {
+          type = "tip"
+          markup = tipMarker
+        } else if (text.startsWith(warningMarker)) {
+          type = "warning"
+          markup = warningMarker
+        } else {
+          type = "danger"
+          markup = dangerMarker
+        }
+
+        token = state.push("notice_open", "div", 1)
+        token.attrs = [
+          ["class", `noticeboard relative my-1 p-4 rounded-md ${typeClassName[type]} ${type}`],
+        ]
+        token.markup = markup
+        token.map = [startLine, state.line]
+
+        token = state.push("inline", "", 0)
+        token.map = [startLine, state.line]
+        token.content = text.substring(tipMarker.length)
+        token.children = []
+
+        token = state.push("notice_close", "div", -1)
+        token.markup = markup
+
+        state.line = startLine + 1
+
+        return true
       }
-      else {
-        type = 'danger'
-        markup = dangerMarker
-      }
 
-      token = state.push('notice_open', 'div', 1)
-      token.attrs = [['class', `noticeboard ${type}`]]
-      token.markup = markup
-      token.map = [startLine, state.line]
-
-      token = state.push('inline', '', 0)
-      token.map = [startLine, state.line]
-      token.content = text.substring(tipMarker.length)
-      token.children = []
-
-      token = state.push('notice_close', 'div', -1)
-      token.markup = markup
-
-      state.line = startLine + 1
-
-      return true
+      return false
     }
-
-    return false
-  })
+  )
 }

@@ -1,16 +1,10 @@
-.collect-block-content{
-  margin-left: 0;
-}
 .code-line-numbers {
-  width: 50px;
+  width: 40px;
   margin: 0;
-  padding: 5px 0 0;
+  padding: 0 10px 0 0;
   position: relative;
-  text-align: center;
+  text-align: right;
   list-style: none;
-  color: #9e9e9e;
-
-  li {
-    display: block
-  }
+  user-select: none;
+  opacity: 0.3;
 }

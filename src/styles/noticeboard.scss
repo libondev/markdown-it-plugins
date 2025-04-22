@@ -1,14 +1,22 @@
 .noticeboard {
   position: relative;
-  margin: .6rem 0;
-  padding: 1rem;
-  border-radius: 4px;
+  margin-block: 4px;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid;
 
   &.tip {
-    background: rgba(32, 255, 154, 0.25);
+    border-color: #6b728033;
+    background-color: #6b728033;
+  }
+
+  &.warning {
+    border-color: #f59e0b33;
+    background-color: #f59e0b33;
   }
 
   &.danger {
-    background: rgba(255, 137, 153, 0.25);
+    border-color: #ef444433;
+    background-color: #ef444433;
   }
 }
