@@ -47,17 +47,31 @@
 
   &.details {
     display: block;
-    position: relative;
-    padding: 0.8rem 1rem;
+    padding: 4px;
     background-color: #6b728033;
+    position: relative;
 
     summary {
       user-select: none;
       font-weight: 500;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      background-color: var(--background, #fff);
       cursor: pointer;
 
       & > span {
         padding-left: 0.25em;
+      }
+    }
+
+    .prompt-container-content {
+      padding: 10px;
+
+      & > p:first-child {
+        margin-top: 0;
+      }
+      & > p:last-child {
+        margin-bottom: 0;
       }
     }
 

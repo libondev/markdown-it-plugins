@@ -14,7 +14,7 @@ export function container(md: Markdown) {
   function getTemplateStartTag(type: string, title: string) {
     if (type === 'details')
       return `<details class="prompt-container font-medium cursor-pointer details">${title
-        ? `<summary class="prompt-container-title select-none"><span>${md.utils.escapeHtml(title)}</span></summary>`
+        ? `<summary class="prompt-container-title select-none"><span>${md.utils.escapeHtml(title)}</span></summary><div class="prompt-container-content">`
         : ''}`
 
     return `<div class="prompt-container relative my-1 p-4 rounded-md ${type}"><p class="prompt-container-title">${md.utils.escapeHtml(title)}</p>`
@@ -22,7 +22,7 @@ export function container(md: Markdown) {
 
   function getTemplateEndTag() {
     if (lastTagName === 'details')
-      return '</details>'
+      return '</div></details>'
 
     return '</div>'
   }
