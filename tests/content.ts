@@ -2,7 +2,7 @@ export default `
 ![1231](https://t7.baidu.com/it/u=1595072465,3644073269&fm=193&f=GIF 'width=300px&height=100px&style=border:3px solid #f00;')
 
 -> This is tip.
-?> This is info.
+?> This is warning.
 !> This is danger.
 
 ::: details title message

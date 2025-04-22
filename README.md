@@ -76,7 +76,8 @@ markdown.use(noticeboard)
 ![noticeboard](snapshot/noticeboard.png)
 
 ```
-?> This is tip.
+-> This is tip.
+?> This is warning.
 !> This is danger.
 ```
 
