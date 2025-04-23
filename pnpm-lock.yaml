@@ -76,7 +76,7 @@ importers:
         specifier: ^0.7.4
         version: 0.7.6
       vite:
-        specifier: ^2.9.18
+        specifier: ^2.9.8
         version: 2.9.18(sass@1.87.0)
       zx:
         specifier: ^6.1.0

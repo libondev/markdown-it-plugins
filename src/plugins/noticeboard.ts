@@ -6,9 +6,9 @@ export function noticeboard(md: Markdown) {
   const dangerMarker = "!> "
 
   const typeClassName = {
-    tip: "bg-gray-500/20",
-    warning: "bg-yellow-500/20",
-    danger: "bg-red-500/20",
+    tip: "bg-gray-500/20 border-gray-500/20",
+    warning: "bg-yellow-500/20 border-yellow-500/20",
+    danger: "bg-red-500/20 border-red-500/20",
   } as const
 
   md.block.ruler.before(
@@ -44,7 +44,7 @@ export function noticeboard(md: Markdown) {
 
         token = state.push("notice_open", "div", 1)
         token.attrs = [
-          ["class", `noticeboard relative my-1 p-4 rounded-md ${typeClassName[type]} ${type}`],
+          ["class", `noticeboard relative my-2.5 p-4 leading-none rounded-md border ${typeClassName[type]} ${type}`],
         ]
         token.markup = markup
         token.map = [startLine, state.line]
