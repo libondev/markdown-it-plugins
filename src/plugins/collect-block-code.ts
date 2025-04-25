@@ -54,11 +54,11 @@ export function collectBlockCode(
   md: Markdown,
   {
     lang = true,
-    copy = false,
+    copy = true,
     open = true,
     copyText = 'copy',
     separator = ':',
-    blockName = false,
+    blockName = true,
   }: CollectCodeBlock = {},
 ) {
   const fence = md.renderer.rules.fence!
@@ -75,14 +75,14 @@ export function collectBlockCode(
     else
       openStatus = open ? 'open' : ''
 
-    template = `<details class="collect-block-code my-4 rounded-md border overflow-hidden" ${openStatus ? 'open' : ''}><summary class="collect-block-trigger flex items-center cursor-pointer "><i class="block-code-icon"></i>${blockName && name ? `<p class="block-code-name">${name}</p>` : '<i style="flex:1"></i>'}`
+    template = `<details class="collect-block-code my-4 rounded-md border overflow-hidden" ${openStatus ? 'open' : ''}><summary class="collect-block-trigger px-3 text-md font-medium h-10 flex items-center cursor-pointer "><i class="block-code-icon"></i>${blockName && name ? `<p class="block-code-name">${name}</p>` : '<i style="flex:1"></i>'}`
 
     const code = fence(tokens, idx, ...args)
 
     if (copy || blockName)
-      template += `${lang ? `<span class="block-code-lang">${language}</span>` : ''}${copy ? `<button class="copy-code-btn" data-text="${copyText}" data-code='${code}'></button>` : ''}`
+      template += `${lang ? `<span class="block-code-lang ml-auto">${language}</span>` : ''}${copy ? `<button class="copy-code-btn" data-text="${copyText}" data-code='${code}'></button>` : ''}`
 
-    template += `</summary><div class="collect-block-content flex border-t">${code}</div></details>`
+    template += `</summary><div class="collect-block-content py-2 flex border-t">${code}</div></details>`
 
     return template
   }
