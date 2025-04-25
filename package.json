@@ -12,15 +12,15 @@
     "parser",
     "attrs"
   ],
-  "homepage": "https://github.com/banlify/markdown-it-plugins#readme",
+  "homepage": "https://github.com/libondev/markdown-it-plugins#readme",
   "bugs": {
-    "url": "https://github.com/banlify/markdown-it-plugins/issues"
+    "url": "https://github.com/libondev/markdown-it-plugins/issues"
   },
   "license": "MIT",
-  "author": "Chestnut <banlify@163.com>",
+  "author": "libondev <bon.li@outlook.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/banlify/markdown-it-plugins.git"
+    "url": "git+https://github.com/libondev/markdown-it-plugins.git"
   },
   "sideEffects": false,
   "main": "./dist/index.cjs",
